@@ -13,25 +13,14 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Inertia\Response;
-use Inertia\ResponseFactory;
 use Throwable;
 
 class DecisionController extends Controller
 {
-    public function __construct(
-        private ResponseFactory $responseFactory,
-    )
-    {
-    }
 
-    public function index(): Response
+    public function index(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|Application
     {
-        return $this->responseFactory->render('ProfessionalFieldDecision', [
-            'professional_fields' => ProfessionalField::orderBy('id')->get(),
-            'general_presentations' => GeneralPresentation::orderBy('id')->get()
-
-        ]);
+        return view('decision.decision');
     }
 
 

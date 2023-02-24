@@ -2,24 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Inertia\Inertia;
-use Inertia\Response;
-
 class StaticSitesController extends Controller
 {
-    public function showHome(): Response
+    public function showHome()
     {
-        return Inertia::render('Home');
+        return view('sites.home');
     }
 
-    public function showPrivacy(): Response
+    public function showPrivacy()
     {
-        return Inertia::render('Privacy');
+        return view('sites.privacy');
     }
 
-    public function showImpressum(): Response
+    public function showImpressum()
     {
-        return Inertia::render('Impressum');
+        return view('sites.impressum');
     }
 
 }
